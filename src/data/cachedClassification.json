@@ -1,0 +1,570 @@
+[
+  {
+    "id": 1,
+    "company": "ZenTech",
+    "role": "Backend Engineer",
+    "senderEmail": "careers@zentech.in",
+    "receivedDate": "2026-10-10",
+    "status": "applied",
+    "originalSubject": "Application received: Backend Engineer",
+    "originalBody": "Hi Jayraj,\n\nThanks for applying for the Backend Engineer position at ZenTech. We have received your application and resume. Our engineering team is currently reviewing submissions. If your profile matches our requirements, our recruiter will reach out within 5-7 business days.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": true,
+      "daysSinceApplied": 14,
+      "suggestedSubject": "Following up on Backend Engineer Application (ZenTech)",
+      "suggestedBody": "Dear ZenTech Hiring Team,\n\nI hope this email finds you well. I submitted my application for the Backend Engineer role 14 days ago on October 10th. I remain very enthusiastic about ZenTech's mission and would love to check if there are any updates or if you need any further information regarding my experience with distributed systems and Go/Node.js.\n\nThank you for your time!\n\nBest regards,\nJayraj"
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 2,
+    "company": "Infosys (Impersonator)",
+    "role": "Senior Fullstack Developer",
+    "senderEmail": "hr.infosys.jobs@gmail.com",
+    "receivedDate": "2026-10-14",
+    "status": "offer",
+    "originalSubject": "Direct Selection & Offer Letter - Pay Rs 4,999 Mandatory Training & Induction Fee",
+    "originalBody": "Dear Candidate,\n\nCongratulations! We are pleased to inform you that your profile has been selected for the position of Senior Fullstack Developer at Infosys Technologies with a CTC of 28.5 LPA.\n\nDue to our corporate policy for immediate virtual onboarding, all selected candidates must deposit a 100% refundable Training & Equipment Security Fee of Rs. 4,999 via UPI to infosys.recruitment.nodal@okhdfcbank before 25 Oct 2026.\n\nPlease also reply with scanned copies of your Aadhaar Card, PAN Card, and cancelled cheque to confirm your joining.",
+    "scam": {
+      "isScam": true,
+      "severity": "critical",
+      "reasons": [
+        "Fee Extortion: Demands a ₹4,999 'refundable training & equipment fee' via personal UPI.",
+        "Free-mail Impersonation: Official enterprise (Infosys) never recruits via generic @gmail.com addresses.",
+        "Document Phishing: Demands Aadhaar, PAN, and cancelled cheque upfront without any formal interview round.",
+        "Premature Direct Selection: High CTC (28.5 LPA) offered with zero prior technical evaluation."
+      ],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 10,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 3,
+    "company": "Finly",
+    "role": "Distributed Systems Engineer",
+    "senderEmail": "talent@finly.co",
+    "receivedDate": "2026-10-18",
+    "status": "interview",
+    "originalSubject": "Interview invite: Round 1 System Design on 27 Oct",
+    "originalBody": "Hi Jayraj,\n\nWe were really impressed by your background and experience in building distributed systems! We would love to invite you for Round 1: System Design & Architecture with our Principal Architect.\n\nThe 45-minute discussion is scheduled for October 27, 2026 at 3:00 PM IST via Google Meet.\n\nPlease confirm if this time works for you.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.98
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 6,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "interviewPrep": {
+      "companyOverview": "Finly is a high-growth fintech infrastructure startup building low-latency multi-currency settlement rails and corporate treasury automation.",
+      "roleSummary": "Senior/Lead backend role focused on idempotent transaction pipelines, event-driven ledger architectures, and high-availability database replication.",
+      "roundName": "Round 1: System Design & Architecture (45 Mins)",
+      "scheduledDate": "27 Oct 2026, 3:00 PM IST",
+      "topicsToPrepare": [
+        "Distributed Locks & Consensus (Redis Redlock vs Zookeeper/etcd)",
+        "Idempotency Keys & Deduplication in Payment Gateways",
+        "Dual-Entry General Ledger Design & Database Sharding",
+        "Kafka Event Sourcing & CQRS Pattern"
+      ],
+      "expectedQuestions": [
+        {
+          "question": "How would you design a distributed wallet system that prevents double-spending during network partitions?",
+          "sampleApproach": "Leverage pessimistic DB locks on account balance rows with database row-level versioning, or implement a distributed ledger with Kafka partition hashing on account_id and sequential event processing."
+        },
+        {
+          "question": "Walk me through how you guarantee exactly-once processing with an external webhook provider.",
+          "sampleApproach": "Store an incoming idempotency token in Redis/Postgres with a unique constraint before executing business logic, returning cached 200 OK for duplicate retries."
+        }
+      ],
+      "questionsToAskInterviewer": [
+        "What are the biggest scalability bottlenecks in Finly's transaction pipeline during peak settlement windows?",
+        "How is the engineering team organized between infrastructure reliability and feature velocity?"
+      ]
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 4,
+    "company": "Swiggy",
+    "role": "Senior Backend Engineer (Search & Discovery)",
+    "senderEmail": "careers@swiggy.in",
+    "receivedDate": "2026-10-12",
+    "status": "applied",
+    "originalSubject": "Application Acknowledgement: Senior Backend Engineer (Search & Discovery)",
+    "originalBody": "Hello Jayraj,\n\nThank you for taking the time to apply for the Senior Backend Engineer role at Swiggy. Your application has been logged into our portal (REF: SWG-88219). Our talent team will evaluate your profile and update you on the next steps.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": true,
+      "daysSinceApplied": 12,
+      "suggestedSubject": "Application Follow-up: Senior Backend Engineer (REF: SWG-88219) - Jayraj",
+      "suggestedBody": "Dear Swiggy Talent Acquisition Team,\n\nI hope you are having a productive week. I am following up on my application submitted on October 12th for the Senior Backend Engineer (Search & Discovery) position (REF: SWG-88219).\n\nGiven my hands-on background in low-latency search caching and microservices, I am very eager to contribute to Swiggy's consumer tech stack. I would appreciate any update on my application status whenever convenient.\n\nWarm regards,\nJayraj"
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 5,
+    "company": "Zomato",
+    "role": "Frontend Engineer (React/TypeScript)",
+    "senderEmail": "talent@zomato.com",
+    "receivedDate": "2026-10-15",
+    "status": "applied",
+    "originalSubject": "Thanks for applying to Zomato - Frontend Engineer (React/TypeScript)",
+    "originalBody": "Hey Jayraj,\n\nWe've received your application for the Frontend Engineer role at Zomato. We build lightning fast experiences for millions of foodies every day. We review applications regularly and will be in touch if your background aligns.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": true,
+      "daysSinceApplied": 9,
+      "suggestedSubject": "Checking in: Frontend Engineer (React/TypeScript) Application - Jayraj",
+      "suggestedBody": "Hi Zomato Talent Team,\n\nI applied for the Frontend Engineer role 9 days ago. Knowing Zomato's focus on high-performance web applications and fluid UI engineering, I am keen to discuss how my experience in React 19, TypeScript, and micro-frontend optimizations can add value to your team.\n\nLooking forward to hearing from you!\n\nBest,\nJayraj"
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 6,
+    "company": "Razorpay",
+    "role": "Staff Software Engineer",
+    "senderEmail": "no-reply@greenhouse.io",
+    "receivedDate": "2026-10-10",
+    "status": "applied",
+    "originalSubject": "Application submitted: Staff Software Engineer at Razorpay",
+    "originalBody": "Dear Jayraj,\n\nThank you for applying to Razorpay. We are revolutionizing money movement for businesses. We have received your application for Staff Software Engineer. You will hear back from our hiring team shortly.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": true,
+      "daysSinceApplied": 14,
+      "suggestedSubject": "Application Inquiry: Staff Software Engineer - Jayraj",
+      "suggestedBody": "Dear Razorpay Recruitment Team,\n\nI am writing to respectfully inquire about the status of my Staff Software Engineer application submitted two weeks ago on October 10th.\n\nI bring extensive experience in architecting resilient distributed payment workflows and would love the opportunity to speak with your engineering leadership. Thank you for your review.\n\nBest regards,\nJayraj"
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 7,
+    "company": "Zepto",
+    "role": "SDE II - Platform",
+    "senderEmail": "jobs@zepto.in",
+    "receivedDate": "2026-10-16",
+    "status": "applied",
+    "originalSubject": "Application Received - Zepto Quick Commerce (SDE II - Platform)",
+    "originalBody": "Hi Jayraj,\n\nThank you for your interest in joining Zepto. We deliver 10-minute joy. Your application for SDE II - Platform is received. Our hiring managers review candidate profiles on a rolling basis.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": true,
+      "daysSinceApplied": 8,
+      "suggestedSubject": "Status check: SDE II - Platform Application (Zepto)",
+      "suggestedBody": "Hi Zepto Hiring Team,\n\nI wanted to follow up on my application for the SDE II Platform position submitted on October 16th. I am very enthusiastic about hyper-local logistics and real-time inventory systems. Please let me know if any additional information is needed from my end.\n\nBest,\nJayraj"
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 8,
+    "company": "CRED",
+    "role": "Platform Engineer",
+    "senderEmail": "careers@cred.club",
+    "receivedDate": "2026-10-14",
+    "status": "applied",
+    "originalSubject": "You have applied to CRED: Platform Engineer",
+    "originalBody": "Hi Jayraj,\n\nThanks for expressing interest in building for the top 1% at CRED. Your application for Platform Engineer has been received. Our team will review your credentials and get back if there is a mutual fit.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": true,
+      "daysSinceApplied": 10,
+      "suggestedSubject": "Following up on Platform Engineer Application - CRED",
+      "suggestedBody": "Dear CRED Team,\n\nHope you are doing well. I am following up on my application for the Platform Engineer role submitted 10 days ago. I admire CRED's uncompromising bar for design and infrastructure performance and would love to connect for a conversation.\n\nThank you for your time,\nJayraj"
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 9,
+    "company": "PhonePe",
+    "role": "Backend Lead",
+    "senderEmail": "recruiter@phonepe.com",
+    "receivedDate": "2026-10-20",
+    "status": "interview",
+    "originalSubject": "Interview Invitation: PhonePe Technical Screen (Round 1)",
+    "originalBody": "Hi Jayraj,\n\nHope this email finds you well. The team at PhonePe was very glad to review your engineering work. We would like to schedule a 60-minute technical screening call covering Core Java/Node.js, concurrency, and DB indexing on October 28, 2026 at 11:30 AM IST.\n\nLet us know if you are available.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 4,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "interviewPrep": {
+      "companyOverview": "PhonePe is India's premier digital payments UPI super-app processing over 6 billion monthly transactions with ultra-high concurrency demands.",
+      "roleSummary": "Technical Screen focusing on thread concurrency, lock-free data structures, connection pooling, and distributed database sharding.",
+      "roundName": "Round 1: Technical Screening (Core Backend & Concurrency)",
+      "scheduledDate": "28 Oct 2026, 11:30 AM IST",
+      "topicsToPrepare": [
+        "Java Memory Model / Node.js Event Loop Microtasks vs Macrotasks",
+        "Optimistic vs Pessimistic Locking under heavy contention",
+        "B-Tree vs LSM Tree storage engines in high-write workloads",
+        "Handling network timeouts and reverse-charge transactions"
+      ],
+      "expectedQuestions": [
+        {
+          "question": "How do you avoid deadlock when two concurrent payment transactions update reciprocal accounts?",
+          "sampleApproach": "Always acquire locks in a globally deterministic order (e.g. by sorting account IDs lexicographically before lock acquisition) or use timeout-based lock retries."
+        }
+      ],
+      "questionsToAskInterviewer": [
+        "How does the platform handle UPI bank gateway downtimes during National Festival peak surges?",
+        "What does the canary deployment process look like for core settlement services?"
+      ]
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 10,
+    "company": "Postman",
+    "role": "Senior API Engineer",
+    "senderEmail": "careers@postman.com",
+    "receivedDate": "2026-10-21",
+    "status": "interview",
+    "originalSubject": "Postman - Next Steps: Live Architecture & Coding Round",
+    "originalBody": "Hi Jayraj,\n\nGreat news! Your take-home challenge scored in the 95th percentile. We would like to advance you to the live architecture and API design round with our Engineering Director on October 29, 2026 at 4:00 PM IST.\n\nPlease find the calendar invite attached.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 3,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "interviewPrep": {
+      "companyOverview": "Postman is the world's leading API collaboration platform used by over 30 million developers globally.",
+      "roleSummary": "Architecture round focused on OpenAPI specifications, streaming protocols (gRPC, WebSockets), and collaborative workspace sync.",
+      "roundName": "Round 2: Live Architecture & API Design",
+      "scheduledDate": "29 Oct 2026, 4:00 PM IST",
+      "topicsToPrepare": [
+        "REST vs GraphQL vs gRPC tradeoffs",
+        "Real-time operational transformation (OT) and CRDTs for collaborative editing",
+        "Rate limiting algorithms (Token Bucket, Leaky Bucket, Sliding Window Log)",
+        "API Gateway design and security policies"
+      ],
+      "expectedQuestions": [
+        {
+          "question": "Design an API rate limiter capable of enforcing tier-based limits across 100,000 requests/sec with minimal Redis latency.",
+          "sampleApproach": "Use a sliding-window counter in Redis implemented with atomic Lua scripts or local in-memory token buckets with periodic Redis sync."
+        }
+      ],
+      "questionsToAskInterviewer": [
+        "How is Postman evolving its architecture to support real-time AI agent integration and tool-calling specs?",
+        "How are schema migrations handled across millions of user collections without downtime?"
+      ]
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 11,
+    "company": "Atlan",
+    "role": "Fullstack Lead",
+    "senderEmail": "hr@atlan.com",
+    "receivedDate": "2026-10-22",
+    "status": "interview",
+    "originalSubject": "Atlan Interview: Culture & Technical Deep Dive",
+    "originalBody": "Hey Jayraj,\n\nWe loved your open-source projects! We are excited to invite you to a 60-minute discussion with our founders and engineering leads on October 30, 2026 at 2:00 PM IST.\n\nLooking forward to meeting you virtually.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.98
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 2,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "interviewPrep": {
+      "companyOverview": "Atlan is the active data governance platform that pioneered the modern data control plane for enterprise metadata.",
+      "roleSummary": "Founder & culture round emphasizing customer obsession, rapid prototyping, and engineering ownership.",
+      "roundName": "Round 3: Founder & Culture Fit Deep Dive",
+      "scheduledDate": "30 Oct 2026, 2:00 PM IST",
+      "topicsToPrepare": [
+        "Your experience navigating post-layoff resilience and rapid learning",
+        "Prior engineering tradeoffs between speed to market vs refactoring",
+        "Open source contributions and developer community engagement"
+      ],
+      "expectedQuestions": [
+        {
+          "question": "Tell us about a technical decision you made that you later regretted, and how you recovered.",
+          "sampleApproach": "Structure using STAR methodology: outline the initial assumptions, the unexpected failure mode under scale, how you mitigated customer impact, and the preventive architectural guardrails added."
+        }
+      ],
+      "questionsToAskInterviewer": [
+        "What is the single biggest surprise enterprise customers encounter when deploying Atlan?",
+        "How do engineering pods balance customer-requested integrations with platform core architecture?"
+      ]
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 12,
+    "company": "TCS (Phishing Syndicate)",
+    "role": "TCS Digital Software Engineer",
+    "senderEmail": "recruitment@tcs-onboarding-portal.net",
+    "receivedDate": "2026-10-17",
+    "status": "applied",
+    "originalSubject": "URGENT: Mandatory Aadhaar, PAN & Bank Verification for Immediate Interview Scheduling",
+    "originalBody": "Attention Candidate,\n\nYour application has been shortlisted for Tata Consultancy Services (TCS Digital). Before we can issue your interview time slot, corporate KYC compliance requires you to immediately upload high-resolution photos of your original Aadhaar Card (both front and back), PAN card, and last 3 months salary slips by replying directly to this email within 6 hours. Failure to comply will lead to permanent blacklisting from all Tata group companies.",
+    "scam": {
+      "isScam": true,
+      "severity": "critical",
+      "reasons": [
+        "Identity Theft Phishing: Demands full scans of Aadhaar (front/back) and PAN card prior to any interview.",
+        "Coercive Urgency & Threat: Uses artificial 6-hour deadline and threats of 'permanent blacklisting' to panic victims.",
+        "Lookalike Phishing Domain: Uses fake domain '@tcs-onboarding-portal.net' instead of legitimate '@tcs.com'."
+      ],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 7,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 13,
+    "company": "Wipro (Impersonator)",
+    "role": "Lead Cloud Architect",
+    "senderEmail": "talent-acquisition@wipro-careers.org",
+    "receivedDate": "2026-10-19",
+    "status": "offer",
+    "originalSubject": "Direct Appointment Letter & MacBook Pro Courier Dispatch - Courier Deposit Required",
+    "originalBody": "Dear Jayraj,\n\nCongratulations! Based on your profile on job portals, the hiring committee at Wipro Limited has appointed you as Lead Cloud Architect at 32 LPA without any preliminary interview.\n\nA company MacBook Pro M3 and Welcome Kit are ready for dispatch to your address. You are required to pay a refundable courier insurance and asset security fee of Rs. 7,500 to our logistics partner account before dispatch. Account details: GPay/PhonePe to 9823419201.",
+    "scam": {
+      "isScam": true,
+      "severity": "critical",
+      "reasons": [
+        "Advance Fee Fraud: Demands ₹7,500 advance courier & asset deposit to personal UPI.",
+        "Unsolicited Offer: Promises ₹32 LPA package with zero preliminary technical interviews.",
+        "Spoofed Domain: Originates from unregistered non-corporate domain '@wipro-careers.org' instead of '@wipro.com'."
+      ],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 5,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 14,
+    "company": "Fake Amazon Remote Task",
+    "role": "Remote Product Rating Agent",
+    "senderEmail": "jobs.amazon.india@consultant.com",
+    "receivedDate": "2026-10-21",
+    "status": "offer",
+    "originalSubject": "Earn Rs 1,20,000/Month Part-Time Work from Home - Immediate Start",
+    "originalBody": "Hello Jobseeker,\n\nAmazon India is hiring remote workers for order review and ratings. Work just 2 hours a day from your mobile phone and earn Rs. 4,000 to Rs. 8,000 daily payout directly to your bank account. No prior experience needed.\n\nTo claim your spot, join our official Telegram coordinator right now: https://t.me/fake_amazon_hiring_bot",
+    "scam": {
+      "isScam": true,
+      "severity": "critical",
+      "reasons": [
+        "Prepaid Task / Telegram Scam: Funnels job seekers into anonymous Telegram bots promising daily payouts for fake review tasks.",
+        "Unrealistic Compensation: Claims ₹1,20,000/month for 2 hours/day with zero qualifications.",
+        "Free-webmail Impersonation: Employs '@consultant.com' disposable domain impersonating Amazon."
+      ],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 3,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 15,
+    "company": "Atlassian",
+    "role": "Senior Software Engineer",
+    "senderEmail": "no-reply@atlassian.com",
+    "receivedDate": "2026-10-18",
+    "status": "rejected",
+    "originalSubject": "Update on your application with Atlassian",
+    "originalBody": "Hi Jayraj,\n\nThank you for taking the time to speak with us regarding the Senior Software Engineer role. While your technical skills and background are commendable, we have decided to move forward with candidates whose experience more closely matches our immediate infrastructure requirements.\n\nWe wish you all the best in your search.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 6,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 16,
+    "company": "Stripe",
+    "role": "Infrastructure Engineer",
+    "senderEmail": "careers@stripe.com",
+    "receivedDate": "2026-10-19",
+    "status": "rejected",
+    "originalSubject": "Your application to Stripe",
+    "originalBody": "Hi Jayraj,\n\nThank you for your interest in Stripe and for investing your time in our interview process. We carefully considered your experience, but we have made the difficult decision not to extend an offer at this stage. We appreciate your effort and wish you success in your future endeavors.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 5,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 17,
+    "company": "Uber",
+    "role": "Backend Engineer",
+    "senderEmail": "talent@uber.com",
+    "receivedDate": "2026-10-20",
+    "status": "rejected",
+    "originalSubject": "Status of your application at Uber",
+    "originalBody": "Hi Jayraj,\n\nThank you for applying for the Backend Engineer role at Uber. After thorough evaluation, we will not be moving forward with your candidacy. We truly appreciate the opportunity to review your profile and wish you the best in your job search.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 4,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 18,
+    "company": "Groww",
+    "role": "Senior Full Stack Engineer",
+    "senderEmail": "careers@groww.in",
+    "receivedDate": "2026-10-22",
+    "status": "applied",
+    "originalSubject": "Application Received: Senior Full Stack Engineer at Groww",
+    "originalBody": "Hi Jayraj,\n\nWe have received your application for the Senior Full Stack Engineer role at Groww. Our talent acquisition team is currently reviewing your profile and will get back to you with next steps shortly.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 2,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 19,
+    "company": "InMobi",
+    "role": "Staff Software Engineer",
+    "senderEmail": "talent@inmobi.com",
+    "receivedDate": "2026-10-23",
+    "status": "applied",
+    "originalSubject": "Thank you for applying to InMobi",
+    "originalBody": "Hello Jayraj,\n\nYour application for Staff Software Engineer has been successfully submitted. We appreciate your patience while our engineering managers review your portfolio and GitHub profile.",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 1,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  },
+  {
+    "id": 20,
+    "company": "BrowserStack",
+    "role": "Staff Software Engineer",
+    "senderEmail": "offers@browserstack.com",
+    "receivedDate": "2026-10-23",
+    "status": "offer",
+    "originalSubject": "Official Offer of Employment: Staff Software Engineer at BrowserStack",
+    "originalBody": "Dear Jayraj,\n\nFollowing your successful completion of all technical rounds and executive debrief, we are thrilled to offer you the position of Staff Software Engineer at BrowserStack!\n\nPlease find attached your formal offer letter detailing compensation, equity grants, and benefits. Please sign via DocuSign by October 30, 2026. Welcome to the team!",
+    "scam": {
+      "isScam": false,
+      "severity": "none",
+      "reasons": [],
+      "confidence": 0.99
+    },
+    "followUp": {
+      "needsFollowUp": false,
+      "daysSinceApplied": 1,
+      "suggestedSubject": "",
+      "suggestedBody": ""
+    },
+    "lastUpdated": "2026-10-24T17:30:00Z"
+  }
+]
