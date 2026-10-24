@@ -10,7 +10,8 @@ import {
   Clock, 
   CheckCircle2,
   Inbox,
-  PlusCircle
+  PlusCircle,
+  BarChart3
 } from 'lucide-react';
 import { GeminiService } from '../services/geminiService';
 
@@ -29,6 +30,7 @@ interface HeaderProps {
   };
   onOpenRawInbox: () => void;
   onOpenAddEmail: () => void;
+  onOpenAnalytics: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -37,7 +39,8 @@ export const Header: React.FC<HeaderProps> = ({
   onStartIngest,
   stats,
   onOpenRawInbox,
-  onOpenAddEmail
+  onOpenAddEmail,
+  onOpenAnalytics
 }) => {
   const [apiKeyModalOpen, setApiKeyModalOpen] = useState(false);
   const [apiKeyInput, setApiKeyInput] = useState(GeminiService.getApiKey());
@@ -81,6 +84,15 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Action CTAs */}
           <div className="flex items-center gap-2.5 flex-wrap">
+            <button
+              onClick={onOpenAnalytics}
+              className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 transition flex items-center gap-1.5 cursor-pointer shadow-sm"
+              title="View Layoff Recovery Momentum & Ghosting Index"
+            >
+              <BarChart3 className="w-3.5 h-3.5 text-purple-400" />
+              📊 Layoff Analytics
+            </button>
+
             <button
               onClick={onOpenAddEmail}
               className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 transition flex items-center gap-1.5 cursor-pointer shadow-sm"

@@ -7,6 +7,7 @@ import { InterviewPrepDrawer } from './components/InterviewPrepDrawer';
 import { EmailViewerModal } from './components/EmailViewerModal';
 import { RawInboxModal } from './components/RawInboxModal';
 import { AddEmailModal } from './components/AddEmailModal';
+import { AnalyticsModal } from './components/AnalyticsModal';
 import { GeminiService } from './services/geminiService';
 import { ProcessedJobApplication } from './types/job';
 import { Sparkles, Shield, Cpu } from 'lucide-react';
@@ -23,6 +24,7 @@ export default function App() {
   const [activeRawEmailJob, setActiveRawEmailJob] = useState<ProcessedJobApplication | null>(null);
   const [isRawInboxOpen, setIsRawInboxOpen] = useState<boolean>(false);
   const [isAddEmailOpen, setIsAddEmailOpen] = useState<boolean>(false);
+  const [isAnalyticsOpen, setIsAnalyticsOpen] = useState<boolean>(false);
 
   // Ingest workflow
   const handleStartIngest = async () => {
@@ -72,6 +74,7 @@ export default function App() {
           stats={stats}
           onOpenRawInbox={() => setIsRawInboxOpen(true)}
           onOpenAddEmail={() => setIsAddEmailOpen(true)}
+          onOpenAnalytics={() => setIsAnalyticsOpen(true)}
         />
 
         {/* Main Board */}
@@ -143,6 +146,12 @@ export default function App() {
         isOpen={isAddEmailOpen}
         onClose={() => setIsAddEmailOpen(false)}
         onAddJob={(newJob) => setJobs((prev) => [newJob, ...prev])}
+      />
+
+      <AnalyticsModal
+        isOpen={isAnalyticsOpen}
+        onClose={() => setIsAnalyticsOpen(false)}
+        jobs={jobs}
       />
     </div>
   );
