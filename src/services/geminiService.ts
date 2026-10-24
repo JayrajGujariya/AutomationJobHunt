@@ -10,15 +10,17 @@ export class GeminiService {
 
   public static setApiKey(key: string) {
     this.apiKey = key.trim();
-    if (this.apiKey) {
-      localStorage.setItem('GEMINI_API_KEY', this.apiKey);
-    } else {
-      localStorage.removeItem('GEMINI_API_KEY');
+    if (typeof localStorage !== 'undefined') {
+      if (this.apiKey) {
+        localStorage.setItem('GEMINI_API_KEY', this.apiKey);
+      } else {
+        localStorage.removeItem('GEMINI_API_KEY');
+      }
     }
   }
 
   public static getApiKey(): string {
-    if (!this.apiKey) {
+    if (!this.apiKey && typeof localStorage !== 'undefined') {
       this.apiKey = localStorage.getItem('GEMINI_API_KEY') || '';
     }
     return this.apiKey;
@@ -264,17 +266,23 @@ Return strictly a JSON object matching:
 
     // 1. Detect Company
     let company = 'Tech Company';
-    const knownCompanies = ['Google', 'Infosys', 'TCS', 'Wipro', 'Amazon', 'Cred', 'Swiggy', 'Zomato', 'Blinkit', 'Razorpay', 'Flipkart', 'Atlassian', 'Stripe', 'Uber', 'Finly', 'PhonePe', 'Postman', 'Atlan', 'BrowserStack'];
+    const knownCompanies = ['Groww', 'InMobi', 'ZenTech', 'Zepto', 'Google', 'Infosys', 'TCS', 'Wipro', 'Amazon', 'Cred', 'Swiggy', 'Zomato', 'Blinkit', 'Razorpay', 'Flipkart', 'Atlassian', 'Stripe', 'Uber', 'Finly', 'PhonePe', 'Postman', 'Atlan', 'BrowserStack'];
     for (const c of knownCompanies) {
       if (text.includes(c.toLowerCase()) || from.includes(c.toLowerCase())) {
         company = c;
         break;
       }
     }
+    if (company === 'Tech Company' && from.includes('@')) {
+      const domainPart = from.split('@')[1]?.split('.')[0];
+      if (domainPart && domainPart !== 'gmail' && domainPart !== 'yahoo') {
+        company = domainPart.charAt(0).toUpperCase() + domainPart.slice(1);
+      }
+    }
 
     // 2. Detect Role
     let role = 'Software Engineer';
-    const roles = ['Frontend Engineer', 'Backend Engineer', 'Fullstack Developer', 'Staff Software Engineer', 'Cloud Architect', 'Platform Engineer', 'SDE II', 'Engineering Manager'];
+    const roles = ['Frontend Engineer', 'Backend Engineer', 'Full Stack Engineer', 'Fullstack Developer', 'Staff Software Engineer', 'Cloud Architect', 'Platform Engineer', 'SDE II', 'Engineering Manager'];
     for (const r of roles) {
       if (text.includes(r.toLowerCase())) {
         role = r;
@@ -282,12 +290,12 @@ Return strictly a JSON object matching:
       }
     }
 
-    // 3. Fraud / Scam Analysis
+    // 3. Fraud / Scam Analysis (Word-boundary precise)
     const reasons: string[] = [];
-    const hasFee = /(fee|pay|deposit|rs\.?|₹|money|charges|upi|refundable)/i.test(text);
-    const hasAadhaarOrPan = /(aadhaar|pan\b|cancelled cheque|bank account|passport)/i.test(text);
+    const hasFee = /\b(fee|training fee|security deposit|courier deposit|registration charge|pay\b|charges|upi)\b|(?:rs\.?|₹)\s*\d+/i.test(text);
+    const hasAadhaarOrPan = /\b(aadhaar|pan card|pan number|cancelled cheque)\b/i.test(text);
     const isFreemail = /@(gmail\.com|yahoo\.com|outlook\.com|consultant\.com)/i.test(from);
-    const mentionsEnterprise = /(infosys|tcs|wipro|google|amazon|microsoft)/i.test(text);
+    const mentionsEnterprise = /\b(infosys|tcs|wipro|google|amazon|microsoft)\b/i.test(text);
 
     if (hasFee) {
       reasons.push("Fee Extortion: Requests a fee, deposit, or registration charge prior to joining/interview.");
@@ -301,16 +309,16 @@ Return strictly a JSON object matching:
 
     const isScam = reasons.length > 0;
 
-    // 4. Status Determination
+    // 4. Status Determination (Strict priority: Scam -> Offer -> Rejected -> Interview -> Applied)
     let status: 'applied' | 'interview' | 'rejected' | 'offer' = 'applied';
     if (isScam) {
       status = text.includes('offer') || text.includes('selected') ? 'offer' : 'applied';
-    } else if (text.includes('interview') || text.includes('round') || text.includes('schedule') || text.includes('discussion')) {
-      status = 'interview';
-    } else if (text.includes('offer') || text.includes('pleased to offer')) {
+    } else if (/(offer of employment|formal offer|official offer|pleased to offer|extend an offer|we are thrilled to offer|offer letter)/i.test(text)) {
       status = 'offer';
-    } else if (text.includes('regret') || text.includes('not moving forward') || text.includes('not advance') || text.includes('freeze')) {
+    } else if (/(regret|not\s+(?:be\s+)?moving\s+forward|not\s+(?:to\s+)?advance|another\s+candidate|freeze|unfortunately|declined|not\s+selected|not\s+advancing)/i.test(text)) {
       status = 'rejected';
+    } else if (/(interview|round\s*\d+|technical screen|discussion with|calendar invite|schedule)/i.test(text)) {
+      status = 'interview';
     }
 
     // 5. Follow-up calculation

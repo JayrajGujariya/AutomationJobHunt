@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="border-b border-white/10 bg-[#090d16]/90 backdrop-blur-md sticky top-0 z-40">
+    <header role="banner" className="border-b border-white/10 bg-[#090d16]/90 backdrop-blur-md sticky top-0 z-40">
       {/* Top Banner / Context */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -61,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Logo & Story Angle */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 ring-1 ring-white/20">
-              <Sparkles className="w-5 h-5 text-white" />
+              <Sparkles className="w-5 h-5 text-white" aria-hidden="true" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({
                   Job Hunt <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Autopilot</span>
                 </h1>
                 <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
                   Autopilot Ready
                 </span>
                 <span className="text-xs text-slate-400 hidden sm:inline">
@@ -83,56 +83,61 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Action CTAs */}
-          <div className="flex items-center gap-2.5 flex-wrap">
+          <nav aria-label="Autopilot Controls" className="flex items-center gap-2.5 flex-wrap">
             <button
               onClick={onOpenAnalytics}
+              aria-label="View Layoff Recovery Momentum and Ghosting Index"
               className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/40 transition flex items-center gap-1.5 cursor-pointer shadow-sm"
               title="View Layoff Recovery Momentum & Ghosting Index"
             >
-              <BarChart3 className="w-3.5 h-3.5 text-purple-400" />
-              📊 Layoff Analytics
+              <BarChart3 className="w-3.5 h-3.5 text-purple-400" aria-hidden="true" />
+              <span>📊 Layoff Analytics</span>
             </button>
 
             <button
               onClick={onOpenAddEmail}
+              aria-label="Paste custom email or test arbitrary judge sample"
               className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 transition flex items-center gap-1.5 cursor-pointer shadow-sm"
               title="Paste custom email or test judge's sample"
             >
-              <PlusCircle className="w-3.5 h-3.5 text-indigo-400" />
-              + Add / Test Email
+              <PlusCircle className="w-3.5 h-3.5 text-indigo-400" aria-hidden="true" />
+              <span>+ Add / Test Email</span>
             </button>
 
             <button
               onClick={onOpenRawInbox}
+              aria-label="Inspect raw 20 email inbox dataset in card and JSON formats"
               className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-white/10 transition flex items-center gap-1.5 cursor-pointer"
               title="Inspect raw 20 email inbox JSON"
             >
-              <Inbox className="w-3.5 h-3.5 text-slate-400" />
-              View Raw Inbox (20)
+              <Inbox className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+              <span>View Raw Inbox (20)</span>
             </button>
 
             <button
               onClick={() => setApiKeyModalOpen(true)}
+              aria-label="Configure live Google Gemini API Key"
               className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-white/10 transition flex items-center gap-1.5 cursor-pointer"
               title="Configure live Gemini API Key"
             >
-              <Key className="w-3.5 h-3.5 text-indigo-400" />
-              {savedKey ? 'Gemini API: Connected' : 'Gemini API: Offline Safe'}
+              <Key className="w-3.5 h-3.5 text-indigo-400" aria-hidden="true" />
+              <span>{savedKey ? 'Gemini API: Connected' : 'Gemini API: Offline Safe'}</span>
             </button>
 
             <button
               onClick={onStartIngest}
               disabled={isProcessing}
+              aria-label="Ingest 20 Layoff Emails with Gemini"
               className={`px-4 py-2 rounded-xl text-xs font-semibold text-white shadow-lg transition flex items-center gap-2 cursor-pointer ${
                 isProcessing 
                   ? 'bg-indigo-600/60 cursor-not-allowed' 
                   : 'bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-indigo-600/30'
               }`}
             >
-              <RefreshCw className={`w-3.5 h-3.5 ${isProcessing ? 'animate-spin' : ''}`} />
-              {isProcessing ? `Ingesting (${progress.current}/${progress.total})...` : '⚡ Ingest 20 Layoff Emails'}
+              <RefreshCw className={`w-3.5 h-3.5 ${isProcessing ? 'animate-spin' : ''}`} aria-hidden="true" />
+              <span>{isProcessing ? `Ingesting (${progress.current}/${progress.total})...` : '⚡ Ingest 20 Layoff Emails'}</span>
             </button>
-          </div>
+          </nav>
         </div>
 
         {/* Live Progress Bar if processing */}
